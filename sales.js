@@ -16,6 +16,7 @@ var storeOne = {
     for (var i = 6; i < 20; i++){
       this.cookiesPerHourAr.push(Math.floor(this.custPerHour() * this.averageCookiesSold));
     }
+
     console.log(this.cookiesPerHourAr);
   }
 };
@@ -40,7 +41,7 @@ var sectionEl = document.getElementById('average-cookies');
 
 sectionEl.appendChild(userElement);
 
-var hourlySales = Math.round(storeOne.averageCookiesSold * storeOne.);
+var hourlySales = Math.round(storeOne.averageCookiesSold * storeOne.custPerHour());
 
 // Store Two ----------------------------
 
