@@ -1,53 +1,64 @@
 'use strict';
 
-// Calculate cooke formula
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
+var openHours;
 
 // Store One -------------------------
 var storeOne = {
+  cookiesPerHourAr: [],
   location: '1st and Pike',
   minHourlyCustomers: 23,
   maxHourlyCustomers: 65,
   averageCookiesSold: 6.3,
+  custPerHour: function(){
+    return Math.floor(Math.random() * (this.maxHourlyCustomers + 1 - this.minHourlyCustomers) + this.minHourlyCustomers);
+  },
+  cookiesPerHour: function(){
+    for (var i = 6; i < 20; i++){
+      this.cookiesPerHourAr.push(Math.floor(this.custPerHour() * this.averageCookiesSold));
+    }
+    console.log(this.cookiesPerHourAr);
+  }
 };
 
-var min = storeOne.minHourlyCustomers;
-var max = storeOne.maxHourlyCustomers;
+var openTimes = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
 
-console.log(storeOne.location);
-console.log(min);
-console.log(max);
+console.log(storeOne.cookiesPerHour());
 
-var storeOneAverageCustomers = getRandomInt(storeOne.minHourlyCustomers, storeOne.maxHourlyCustomers);
+var average = storeOne.custPerHour();
 
-console.log(storeOneAverageCustomers);
-console.log(storeOne.minHourlyCustomers * storeOneAverageCustomers);
+for (var i = 0; i < 14; i++){
+  console.log(openTimes[i]);
+}
+// HTML --------------------------
+var userElement = document.createElement('ul');
 
-for
+userElement.setAttribute('id', 'cookie sales');
 
-// // Store Two ----------------------------
-//
+userElement.textContent = storeOne.cookiesPerHourAr;
+
+var sectionEl = document.getElementById('average-cookies');
+
+sectionEl.appendChild(userElement);
+
+var hourlySales = Math.round(storeOne.averageCookiesSold * storeOne.);
+
+// Store Two ----------------------------
+
 // var storeTwo = {
 //   location: 'Seatac Airport',
 //   minHourlyCustomers: 3,
 //   maxHourlyCustomers: 24,
 //   averageCookiesSold: 1.2
+//   custPerHour: function(){
+//     return Math.floor(Math.random() * (this.maxHourlyCustomers + 1 - this.minHourlyCustomers) + this.minHourlyCustomers);
+//   },
+//   cookiesPerHour: function(){
+//     for (var i = 6; i < 20; i++){
+//       this.cookiesPerHourAr.push(Math.floor(this.custPerHour() * this.averageCookiesSold));
+//     }
+//     console.log(this.cookiesPerHourAr);
+//   }
 // };
-//
-// var min = storeTwo.minHourlyCustomers;
-// var max = storeTwo.maxHourlyCustomers;
-//
-// console.log(storeTwo.location);
-// console.log(min);
-// console.log(max);
-//
-// var storeTwoAverageCustomers = getRandomInt(storeTwo.minHourlyCustomers, storeTwo.maxHourlyCustomers);
-//
-// console.log(storeTwoAverageCustomers);
 //
 // Store Three ------------------------------------
 //
@@ -79,5 +90,5 @@ for
 //   max = Math.floor(max);
 //   return Math.floor(Math.random() * (max - min)) + min;
 // }
-
+//
 // Random number function
