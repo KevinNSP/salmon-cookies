@@ -9,6 +9,7 @@ var storeOne = {
   minHourlyCustomers: 23,
   maxHourlyCustomers: 65,
   averageCookiesSold: 6.3,
+  totalSales: 0,
   custPerHour: function(){
     return Math.floor(Math.random() * (this.maxHourlyCustomers + 1 - this.minHourlyCustomers) + this.minHourlyCustomers);
   },
