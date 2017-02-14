@@ -29,18 +29,6 @@ var average = storeOne.custPerHour();
 
 for (var i = 0; i < 14; i++){
 };
-// HTML --------------------------
-var userElement = document.createElement('ul');
-
-userElement.setAttribute('id', 'cookie sales');
-
-userElement.textContent = storeOne.cookiesPerHourAr;
-
-var sectionEl = document.getElementById('average-cookies');
-
-sectionEl.appendChild(userElement);
-
-var hourlySales = Math.round(storeOne.averageCookiesSold * storeOne.custPerHour());
 
 // Store Two ----------------------------
 
@@ -154,7 +142,63 @@ var average = storeFive.custPerHour();
 for (var i = 0; i < 14; i++){
 };
 
+// ADD to HTML --------------------------
+var userElementOne = document.createElement('ul');
+userElementOne.setAttribute('id', 'cookie sales store one');
+userElementOne.textContent = storeOne.cookiesPerHourAr;
+
+var userElementTwo = document.createElement('ul');
+userElementTwo.setAttribute('id', 'cookie sales store two');
+userElementTwo.textContent = storeTwo.cookiesPerHourAr;
+
+var userElementThree = document.createElement('ul');
+userElementThree.setAttribute('id', 'cookie sales store three');
+userElementThree.textContent = storeThree.cookiesPerHourAr;
+
+var userElementFour = document.createElement('ul');
+userElementFour.setAttribute('id', 'cookie sales store three');
+userElementFour.textContent = storeFour.cookiesPerHourAr;
+
+var userElementFive = document.createElement('ul');
+userElementFive.setAttribute('id', 'cookie sales store four');
+userElementFive.textContent = storeFive.cookiesPerHourAr;
+
+var sectionEl = document.getElementById('average-cookies');
+
+var openTimes = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm'];
+
+sectionEl.appendChild(userElementOne);
+sectionEl.appendChild(userElementTwo);
+sectionEl.appendChild(userElementThree);
+sectionEl.appendChild(userElementFour);
+sectionEl.appendChild(userElementFive);
+
+var hourlySales = Math.round(storeOne.averageCookiesSold * storeOne.custPerHour());
+
 // TESTING----------------------------------------------------
+
+// var userElementOne = document.createElement('ul');
+//
+// userElementOne.setAttribute('id', 'cookie sales store one');
+// userElementOne.textContent = storeOne.cookiesPerHourAr;
+//
+// userElement.setAttribute('id', 'cookie sales store two');
+// userElement.textContent = storeTwo.cookiesPerHourAr;
+//
+// userElement.setAttribute('id', 'cookie sales store three');
+// userElement.textContent = storeThree.cookiesPerHourAr;
+//
+// userElement.setAttribute('id', 'cookie sales store four');
+// userElement.textContent = storeFour.cookiesPerHourAr;
+//
+// userElement.setAttribute('id', 'cookie sales store five');
+// userElement.textContent = storeFive.cookiesPerHourAr;
+//
+// var sectionEl = document.getElementById('average-cookies');
+//
+// sectionEl.appendChild(userElementOne);
+//
+// var hourlySales = Math.round(storeOne.averageCookiesSold * storeOne.custPerHour());
 
 // function getRandomInt(min, max) {
 //   min = Math.ceil(min);
